@@ -39,7 +39,7 @@ export function Dashboard() {
       <ul>
         {notes.map((n) => (
           <li key={n.id}>
-            {n.body} <span className="muted">{new Date(n.createdAt).toLocaleString()}</span>
+            {n.body} <span className="muted">{new Date(n.created_at).toLocaleString()}</span>
           </li>
         ))}
       </ul>

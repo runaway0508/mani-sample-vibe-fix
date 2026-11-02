@@ -1,0 +1,6 @@
+Same commit built with `vite build` only (skipping tsc). The bundle contains:
+
+  const jh=void 0;throw new Error("Missing Supabase URL");
+
+Vite replaced import.meta.env.SUPABASE_URL with undefined (no VITE_ prefix),
+so the app throws before React renders: blank white page, error in the console.

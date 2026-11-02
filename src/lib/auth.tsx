@@ -1,21 +1,26 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
-import { useLocation } from 'react-router-dom'
 import { supabase } from './supabase'
 import type { Session } from './localClient'
 
-const AuthContext = createContext<{ session: Session | null }>({ session: null })
+const AuthContext = createContext<{ session: Session | null; loading: boolean }>({ session: null, loading: true })
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)
-  const location = useLocation()
+  const [loading, setLoading] = useState(true)
 
-  // refresh the session on every page change
+  // read the stored session once, then follow sign-in / sign-out events
   useEffect(() => {
-    setSession(null)
-    supabase.auth.getSession().then(({ data }) => setSession(data.session))
-  }, [location.pathname])
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session)
+      setLoading(false)
+    })
+    const { data } = supabase.auth.onAuthStateChange((_event, s) => setSession(s))
+    return () => {
+      data.subscription.unsubscribe()
+    }
+  }, [])
 
-  return <AuthContext.Provider value={{ session }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ session, loading }}>{children}</AuthContext.Provider>
 }
 
 export const useAuth = () => useContext(AuthContext)
