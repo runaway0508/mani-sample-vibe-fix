@@ -1,0 +1,6 @@
+$ npm run build        # commit a32b24a (as handed over)
+
+> mani-sample-vibe-fix@0.1.0 build
+> tsc --noEmit && vite build
+
+src/pages/Dashboard.tsx(42,58): error TS2551: Property 'createdAt' does not exist on type 'Note'. Did you mean 'created_at'?

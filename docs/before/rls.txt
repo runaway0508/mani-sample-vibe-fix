@@ -1,0 +1,6 @@
+Node check against src/lib/localClient.ts (sign in, insert one note, select):
+
+  before (9d80311): insert error=none | select rows=0
+  after  (main):    insert error=none | select rows=1
+
+No error anywhere: RLS simply filtered every row out of select.

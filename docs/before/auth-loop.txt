@@ -1,0 +1,6 @@
+https://before.mani-sample-vibe-fix.pages.dev (commit 9d80311: build + env fixed, 3 bugs left)
+Sign in on /login, then count history.pushState/replaceState calls:
+
+  20 redirects in 3s, now at /login
+
+/login -> /dashboard -> /login ... never settles on the dashboard.

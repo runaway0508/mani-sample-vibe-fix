@@ -1,0 +1,4 @@
+$ curl -s -o /dev/null -w '%{http_code}' https://before.mani-sample-vibe-fix.pages.dev/dashboard
+404
+$ curl -s -o /dev/null -w '%{http_code}' https://mani-sample-vibe-fix.pages.dev/dashboard
+200
