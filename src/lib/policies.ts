@@ -5,6 +5,7 @@ type Check = (row: Row, uid: string | null) => boolean
 
 export const policies: Record<string, { select?: Check; insert?: Check }> = {
   notes: {
+    select: (row, uid) => uid !== null && row.user_id === uid,
     insert: (row, uid) => uid !== null && row.user_id === uid,
   },
 }
