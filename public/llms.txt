@@ -1,0 +1,15 @@
+# vibe-fix demo (mani-sample-vibe-fix)
+
+> A small Vite + React notes app broken on purpose in five ways common to AI-built apps (Lovable, Bolt, Replit, Cursor, Claude Code), then diagnosed and fixed one commit at a time. Made by MANI as a public sample.
+
+- Fixed app: https://mani-sample-vibe-fix.pages.dev
+- Before (3 bugs still live): https://before.mani-sample-vibe-fix.pages.dev
+- Source: https://github.com/runaway0508/mani-sample-vibe-fix
+- Diagnosis report: https://github.com/runaway0508/mani-sample-vibe-fix/blob/main/docs/DIAGNOSIS.md
+
+## The five problems
+1. Build failure (TypeScript error)
+2. Missing env var (no VITE_ prefix)
+3. Auth redirect loop
+4. Supabase RLS blocks reads
+5. Routing 404 on Cloudflare Pages (stray 404.html)

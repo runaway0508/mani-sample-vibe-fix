@@ -4,9 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes — vibe-fix demo</title>
+    <meta name="description" content="A small Vite + React notes app broken on purpose in five ways common to Lovable, Bolt, Replit and Cursor builds — build error, missing env var, auth loop, Supabase RLS, SPA 404 — then diagnosed and fixed." />
+    <link rel="canonical" href="https://mani-sample-vibe-fix.pages.dev/" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"WebSite","name":"vibe-fix demo","url":"https://mani-sample-vibe-fix.pages.dev/","publisher":{"@type":"Organization","name":"MANI","url":"https://www.manilabs.co.kr/"}},
+      {"@type":"SoftwareSourceCode","name":"mani-sample-vibe-fix","codeRepository":"https://github.com/runaway0508/mani-sample-vibe-fix","programmingLanguage":["TypeScript","React"]},
+      {"@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is this app?","acceptedAnswer":{"@type":"Answer","text":"A small Vite + React notes app that was broken on purpose with five problems often seen in AI-built apps, then diagnosed and fixed one commit at a time."}},
+        {"@type":"Question","name":"Which five problems were fixed?","acceptedAnswer":{"@type":"Answer","text":"A TypeScript build failure, an env var missing the VITE_ prefix, an auth redirect loop, a Supabase RLS policy that blocked reads, and a stray 404.html that broke SPA routing on Cloudflare Pages."}},
+        {"@type":"Question","name":"Is my data sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Any email signs in, nothing is sent, and notes stay in your browser's localStorage."}}
+      ]}
+    ]}
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <section aria-labelledby="faq-h" style="max-width:640px;margin:2rem auto;padding:0 16px;font:15px/1.6 system-ui,sans-serif">
+      <h2 id="faq-h">FAQ</h2>
+      <h3>What is this app?</h3>
+      <p>A small Vite + React notes app that was broken on purpose with five problems often seen in AI-built apps, then diagnosed and fixed one commit at a time.</p>
+      <h3>Which five problems were fixed?</h3>
+      <p>A TypeScript build failure, an env var missing the <code>VITE_</code> prefix, an auth redirect loop, a Supabase RLS policy that blocked reads, and a stray <code>404.html</code> that broke SPA routing on Cloudflare Pages.</p>
+      <h3>Is my data sent anywhere?</h3>
+      <p>No. Any email signs in, nothing is sent, and notes stay in your browser's localStorage.</p>
+      <p><a href="https://github.com/runaway0508/mani-sample-vibe-fix">Source and diagnosis report on GitHub</a></p>
+    </section>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
